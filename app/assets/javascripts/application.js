@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
-//= require jquery.processEach
 //= requre jquery.sokoban.js
 //= require_tree .
 
@@ -22,5 +21,13 @@ jQuery(function($){
 	$('.play').click(function(){
 		$('pre.player-sokoban').text($('textarea.enter-sokoban').val());
 		$('pre.player-sokoban').sokoban();
+		var soko_guy  = $('pre.ai-sokoban').ai_sokoban();
+		console.log(soko_guy);
 	});
+
+	$('.move').click(function(){
+		var soko_guy  = $('pre.ai-sokoban').ai_sokoban();
+		soko_guy.move(-1, 0);
+	});
+
 });
